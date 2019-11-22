@@ -5,7 +5,13 @@ package _04_tea_maker;
  */
 
 public class TeaMaker {
-
+public static void main(String[] args) {
+	TeaBag t = new TeaBag("Green");
+	Kettle k = new Kettle();
+	k.boil();
+	Cup c = new Cup();
+	c.makeTea(t, k.getWater());
+}
 	/* Figure out how to make a cup of tea in this runner class, using the other classes below */
 
 }
@@ -59,7 +65,7 @@ class Cup {
 	void makeTea(TeaBag teabag, Kettle.Water hotWater) {
 		this.teabag = teabag;
 		if (hotWater.isHot())
-			System.out.println("Making hot " + teabag.getFlavor() + " tea.");
+			System.out.println("So heres the tea, making hot " + teabag.getFlavor() + " tea.");
 		else
 			System.out.println("Can't make tea with cold water! ");
 	}
